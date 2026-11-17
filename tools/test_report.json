@@ -1,0 +1,186 @@
+{
+  "version": "v2",
+  "date": "Tue Nov 17 2026 16:44:17 GMT+0530 (India Standard Time)",
+  "errors": [],
+  "fps": {
+    "title": 60,
+    "autoplay": {
+      "min": 59,
+      "max": 61,
+      "avg": 60,
+      "minFpsHook": 59
+    }
+  },
+  "scenarios": {
+    "desktopHumanKeyboard": {
+      "presses": 88,
+      "lineRides": 5,
+      "runs": [
+        {
+          "secs": 150,
+          "gear": 4,
+          "gear3AtSecs": 76.8,
+          "unfinished": true
+        }
+      ],
+      "deaths0": 0,
+      "deaths": 0,
+      "finalState": "play",
+      "finalGear": 4,
+      "audio": "running",
+      "fps": 60,
+      "minFps": 59,
+      "totals": {
+        "close": 3,
+        "sparks": 128,
+        "gold": 1,
+        "runs": 1,
+        "perfect": 0,
+        "thread": 6,
+        "rush": 3,
+        "daily": 0
+      }
+    },
+    "dailyAndRestart": {
+      "skinAfterTwoC": 2,
+      "dailyStarted": true,
+      "reachedGameOver": true,
+      "restarted": true,
+      "restartMs": 6,
+      "stillDaily": true
+    },
+    "autoplay95s": {
+      "deaths": 0,
+      "restarts": 0,
+      "finalGear": 6,
+      "zonesSeen": [
+        "DAYBREAK",
+        "SWING SHIFT",
+        "PRISM",
+        "MIRROR",
+        "BLACKOUT",
+        "RUSH HOUR"
+      ],
+      "score": 9900,
+      "stats": {
+        "threads": 7,
+        "rushes": 5,
+        "close": 17,
+        "perfect": 0,
+        "sparks": 97
+      }
+    },
+    "mobileTouch": {
+      "twoThumbLine": true,
+      "releaseLeftThumbGoesRight": true,
+      "taps": 67,
+      "deaths": 6,
+      "fps": [
+        60,
+        60,
+        60,
+        60,
+        60,
+        60
+      ],
+      "scroll": {
+        "sx": 0,
+        "sy": 0,
+        "sw": 412,
+        "cw": 412,
+        "sh": 839,
+        "ch": 839,
+        "vp": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+      }
+    },
+    "desktopHumanReturning": {
+      "presses": 90,
+      "lineRides": 5,
+      "runs": [
+        {
+          "secs": 150,
+          "gear": 4,
+          "gear3AtSecs": 76.3,
+          "unfinished": true
+        }
+      ],
+      "deaths0": 0,
+      "deaths": 0,
+      "finalState": "play",
+      "finalGear": 4
+    }
+  },
+  "zones": {
+    "res": {
+      "v2_zone2_swing_shifter": {
+        "ok": true,
+        "waitedMs": 898,
+        "deaths": 0,
+        "gear": 2,
+        "fps": 57
+      },
+      "v2_zone3_prism_line": {
+        "ok": true,
+        "waitedMs": 2076,
+        "deaths": 0,
+        "gear": 3,
+        "fps": 60
+      },
+      "v2_zone4_mirror_flip": {
+        "ok": true,
+        "waitedMs": 3075,
+        "deaths": 0,
+        "gear": 4,
+        "fps": 60
+      },
+      "v2_zone4_mirrored": {
+        "ok": true,
+        "waitedMs": 9427,
+        "deaths": 0,
+        "gear": 4,
+        "fps": 60
+      },
+      "v2_zone5_blackout": {
+        "ok": true,
+        "waitedMs": 3741,
+        "deaths": 0,
+        "gear": 5,
+        "fps": 60
+      },
+      "v2_zone6_rush_hour": {
+        "ok": true,
+        "waitedMs": 7433,
+        "deaths": 0,
+        "gear": 6,
+        "fps": 60
+      },
+      "v2_rush": {
+        "ok": true,
+        "waitedMs": 9365,
+        "deaths": 0,
+        "gear": 2,
+        "fps": 60
+      },
+      "v2_overtime": {
+        "ok": true,
+        "waitedMs": 5351,
+        "deaths": 0,
+        "gear": 7,
+        "fps": 60
+      },
+      "v2_mobile_prism": {
+        "ok": true,
+        "waitedMs": 2350,
+        "deaths": 0,
+        "gear": 3,
+        "fps": 60
+      }
+    },
+    "errors": []
+  },
+  "notes": [
+    "desktopHumanKeyboard/desktopHumanReturning use a simulated 'decent human' (150-300 ms reactions, 8%/15% slips of +200-400 ms, real keyboard events incl. holding both Shifts) as a tuning proxy, not a real person.",
+    "autoplay95s uses ?fast=1 (short gears) so all zones are visited within 95 s.",
+    "An earlier returning-player run of the same simulation reached gear 3 at 75.3 s and died in gear 4 (MIRROR) at 128.5 s."
+  ]
+}
