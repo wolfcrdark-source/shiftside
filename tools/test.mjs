@@ -36,7 +36,7 @@ const g = (page, k) => page.evaluate(k => window.__game[k], k);
     if (!shotMid && Date.now() - start > 9000 && st === 'play') { await page.screenshot({ path: `${shots}/02_tutorial.png` }); shotMid = true; }
     if ((Date.now() - start) % 5000 < 200) fpsSamples.push(await g(page, 'fps'));
   }
-  report.desktopKeyboard = { presses, tutPrompts, deaths: await g(page, 'deaths'), state: await g(page, 'state'), fpsSamples, save: await g(page, 'save') };
+  report.desktopKeyboard = { audio: await g(page, 'audio'), presses, tutPrompts, deaths: await g(page, 'deaths'), state: await g(page, 'state'), fpsSamples, save: await g(page, 'save') };
   await ctx.close();
 }
 // 2) Desktop autoplay (built-in bot drives the real input path) for 75 s: mid-game screenshots + fps

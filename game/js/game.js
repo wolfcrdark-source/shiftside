@@ -764,7 +764,7 @@ function drawTitle() {
 function drawGoals(x, y, alpha) {
   const gl = activeGoalList(); if (!gl.length) return;
   cx.globalAlpha = alpha;
-  cx.fillStyle = 'rgba(14,13,20,0.82)';
+  cx.fillStyle = 'rgba(14,13,20,0.95)';
   const w = 330, h = 30 + gl.length * 34;
   cx.beginPath(); cx.roundRect ? cx.roundRect(x - w / 2, y, w, h, 12) : cx.rect(x - w / 2, y, w, h); cx.fill();
   text('SHIFT GOALS', x, y + 16, 13, 'center', 900, '#9a97a8');
@@ -835,7 +835,7 @@ function drawMute() {
 }
 
 // ---------- loop ----------
-window.__game = { deaths: 0, fps: 0, frames: 0, get state() { return state; }, get score() { return run ? Math.floor(run.score) : 0; }, get gear() { return run ? run.gear : 0; }, get t() { return run ? run.t : 0; }, get save() { return save; }, get prompt() { return run ? run.prompt : null; }, get dist() { return run ? Math.floor(run.dist / 40) : 0; } };
+window.__game = { deaths: 0, fps: 0, frames: 0, get state() { return state; }, get score() { return run ? Math.floor(run.score) : 0; }, get gear() { return run ? run.gear : 0; }, get t() { return run ? run.t : 0; }, get save() { return save; }, get prompt() { return run ? run.prompt : null; }, get audio() { return AU.c ? AU.c.state : 'none'; }, get dist() { return run ? Math.floor(run.dist / 40) : 0; } };
 const ft = [];
 let last = performance.now();
 function frame(now) {
