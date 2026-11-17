@@ -72,3 +72,57 @@ No ads, no currencies, no timers that nag you to come back, no fake scarcity. Et
 - Mobile: viewport user-scalable=no, touch-action:none, overscroll none, pointerdown input.
 - Saves to localStorage key `shiftside.v1`: best score/distance, totals, per-run bests, goals, mute and the tutorial flag.
 - Test hooks: `?autoplay=1` lets the built-in bot play (it also drives the title-screen attract mode). `window.__game` exposes state/fps for tests.
+
+---
+
+# v2: Zones, the Line, Rushes, Daily (17 Nov 2026)
+
+Feedback after v1: "the animations look great; add more complexity and make the levels more interesting." The goal for v2 is more depth and more variety per minute, without losing one-glance readability, the two-key core or instant restart.
+
+## Candidates evaluated
+| Idea | Depth | Readability risk | Verdict |
+|---|---|---|---|
+| Gear **zones** (each gear = a named zone with its own signature hazard, accent and background motif) | High: a new skill atom every gear | Low if each hazard gets a slow, telegraphed first instance | **Build** (backbone of v2) |
+| **Ride the line** (hold BOTH Shifts / both thumbs to straddle the centre line) + **prism walls** that fill both worlds except a slit on the line | High: a third position and a *hold* verb, with timing in and out | Low: the slit is literally on the glowing line | **Build** (Gear 3 signature) |
+| Split walls with a timed gap / partial-height walls | Medium | Medium: in a 2-lane game a "gap" equals a normal wall, and timed doors can be unfair | Dropped; prism walls give the same "gap" feel fairly |
+| **Mirror flip** (worlds swap sides with a card-flip animation; you stay in your world, controls stay screen-left/right) | Medium-high: re-reading the board under pressure | Medium, so it's always triggered by a visible "MIRROR" marker line with an empty stretch around the flip, plus slow-mo during the flip | **Build** (Gear 4) |
+| **Blackout** (above a visibility edge you only see walls on the beat) | Medium: memory + rhythm | Medium-high, so it's limited: the near zone stays fully visible, flashes every beat, and a marker line announces it | **Build** (Gear 5) |
+| Double lanes / speed gates | Low-medium | Adds clutter | Dropped |
+| **RUSH set-pieces**: a choreographed beat-spaced wall chorus that ends every gear; clearing it shifts you up | High drama, rhythm feel, clear "boss" moments | Low (regular spacing) | **Build** |
+| Double shifters (jump sides twice) | Medium | Low with arrows | **Build** (Gear 6 "Rush Hour") |
+| **Line sparks** (sparks on the centre line, often between walls) = risky route rewards | Medium: optional greed | Low | **Build** |
+| **Daily challenge** seed (same wall sequence for everyone that day, separate best) | Meta replay | None | **Build** |
+| **Unlockable skins** (player shapes) from goal ranks | Light investment | None | **Build** |
+| **Danger telegraphs** (chevrons at the top edge just before a fast wall appears) | Fairness | None | **Build** (from gear 4) |
+
+## The zones
+| Gear | Zone | Signature | Intro (first instance) |
+|---|---|---|---|
+| 1 | DAYBREAK | singles, zig-zags, sparks | scripted tutorial on first-ever run |
+| 2 | SWING SHIFT | shifter walls (striped arrows) | one shifter, extra space, slow-mo, prompt |
+| 3 | PRISM | prism walls + line sparks; hold both to ride the line | wide-spaced prism + line sparks, slow-mo, "Hold BOTH Shifts" prompt |
+| 4 | MIRROR | world flips at marker lines | marker line, empty stretch, slow-mo flip, "Stay with your world" prompt |
+| 5 | BLACKOUT | beat-strobe visibility above an edge | marker line, slow first wall, prompt |
+| 6 | RUSH HOUR | denser rushes, double shifters | prompt |
+| 7+ | OVERTIME n | endless remix of everything: flips and blackouts on timers, all patterns; speed keeps rising to the cap | banner |
+
+Every zone ends in a **RUSH** (4 + gear walls on the beat, half-time if too dense to be fair, prism beats from gear 3). The last RUSH wall passing you triggers the gear shift, the 2-second spark breather and the next zone's banner. This is the sawtooth: tension, chorus, release, new idea.
+
+## Tuning
+- Gear length 26 + 3 x gear seconds, plus the rush, so gear 3 arrives at about 65-75 s for a decent player (first-run tutorial excluded).
+- Speed 290 + 70 x (gear - 1), +15% within a gear, capped at 1000.
+- Wall gaps >= 34 + speed x max(0.2, 0.42 - 0.025 x gear). Shifters jump >= 0.55 s before reaching you; the second jump of a double shifter is >= 0.38 s before.
+- Straddling the line collides with walls on *either* side, so the line is a precise tool, not a safe spot.
+- Intros slow time for the player's first two lifetime encounters of each mechanic; the zone banner always shows its one-line prompt.
+
+## Controls (v2)
+- Left Shift / Right Shift (or arrows / A D): jump to that screen side.
+- Hold **both** (or hold Space / Up / W): ride the line. Releasing one key rolls you to the side still held.
+- Touch: tap a half to jump there; hold both thumbs to ride the line.
+- Title: Down/S (or the DAILY button) starts the Daily Challenge; C (or the skin chip) cycles unlocked skins.
+
+## Audio per mechanic
+Shifter jump whoosh, prism shimmer on approach + "threaded" chord, line-ride hum blips, mirror flip sweep, blackout power-down/up + louder beat ticks, rush fanfare + lead melody during the rush, zone banner arpeggio.
+
+## Test hooks
+`?autoplay=1` (the bot now handles the line, prisms, flips, double shifters), `?zone=N` (start at gear N), `?fast=1` (short gears, for video and tests), `?cover=1`.
