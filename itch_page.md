@@ -3,7 +3,7 @@
 ## Basics
 - **Title:** SHIFTSIDE
 - **Project URL slug:** shiftside
-- **Short description / tagline (itch "Short description"):** Two worlds. Two Shift keys. One line. A fast one-decision arcade game for Game Off 2026.
+- **Short description / tagline (itch "Short description"):** Two worlds. Two Shift keys. One line. Six zones that keep shifting the rules.
 - **Classification:** Games
 - **Kind of project:** HTML (playable in browser)
 - **Release status:** Released
@@ -26,40 +26,51 @@
 - **Tags (up to 10):** arcade, one-button, minimalist, fast-paced, high-score, endless, colorful, casual, game-off, shift
 - **AI generation disclosure (itch field):** Yes, the project uses AI-generated content for **Code** (AI-assisted coding). No AI-generated graphics, sound or text assets: graphics and audio are procedural code.
 - **Input methods:** Keyboard, Mouse, Touchscreen
-- **Accessibility:** One-button-style controls (two keys), high-contrast graphics, mute toggle (M), pause (P / Esc)
+- **Accessibility:** Two-key controls (arrows / A D alternatives), high-contrast graphics, slow-motion intros for each new mechanic, mute toggle (M), pause (P / Esc)
 - **Average session:** A few seconds to a few minutes
 - **Languages:** English
 - **Platforms:** HTML5 (Windows / macOS / Linux / Android / iOS browsers)
 - **Licence:** MIT (source on GitHub)
 - **Cover image:** `shots/cover_630x500.png` (630x500)
-- **Screenshots:** `shots/01_title.png`, `shots/03_play_gear1.png`, `shots/04_play_gear3.png`, `shots/05_gameover.png`, `shots/06b_mobile_play.png`
+- **Screenshots (v2):** `shots/v2_zone3_prism_line.png`, `shots/v2_zone4_mirror_flip.png`, `shots/v2_zone5_blackout.png`, `shots/v2_rush.png`, `shots/v2_zone2_swing_shifter.png`, `shots/01_title.png`, `shots/05b_daily_gameover.png`, `shots/v2_mobile_prism.png`
+- **Gameplay video:** `video/shiftside_v2_gameplay.mp4` (upload to YouTube and paste the link in itch's "Gameplay video or trailer" field if you want one)
 - **Theme colours (Edit theme):** background `#0e0d14`, text `#f3efe6`, link/button `#ff3d7f`
 
 ## Description (paste into itch "Description")
 
 **SHIFTSIDE: Two worlds. Two Shift keys. One line.**
 
-The screen is split down the middle: a light **DAY** world on the left and a dark **NIGHT** world on the right. Walls rush toward you, and each one fills a whole world. You only make one decision, over and over, faster and faster: **which side are you on?**
+The screen is split down the middle: a light **DAY** world on the left and a dark **NIGHT** world on the right. Walls rush toward you, and each one fills a whole world. You make one decision, over and over, faster and faster: **which side are you on?** Then the game starts bending the rules.
 
 **How to play**
-- **Left Shift** = jump into the left world · **Right Shift** = jump into the right world
-- Arrow keys or A / D work too · Space toggles · P pauses · M mutes
-- On a phone or tablet, tap the left or right half of the screen.
+- **Left Shift** = jump to the left · **Right Shift** = jump to the right
+- **Hold both** (or Space) = **ride the line** through prism walls
+- Arrow keys or A / D work too · P pauses · M mutes · ↓ on the title = Daily Challenge · C = change skin
+- On a phone or tablet, tap the left or right half of the screen. Hold both thumbs to ride the line.
 
-**What makes it tick**
-- **Close shifts and PERFECT shifts:** dodge at the last instant to build a multiplier up to x8. Play it safe and it drains away.
-- **Gear shifts:** every ~20 seconds you shift up a gear. The speed rises, the colours change and the soundtrack **shifts key**. You get a short breather full of sparks first.
+**Six zones, one new idea each**
+1. **DAYBREAK:** learn the shift.
+2. **SWING SHIFT:** striped arrows mean a wall is about to jump into your world.
+3. **PRISM:** walls fill *both* worlds except a slit on the line. Hold both Shifts to thread them, and steal risky sparks off the line.
+4. **MIRROR:** at the marker the worlds flip sides. Stay with your world.
+5. **BLACKOUT:** the lights go out and the walls only flash on the beat.
+6. **RUSH HOUR:** double shifters that jump twice.
+7. **OVERTIME:** everything at once, forever.
+
+Every gear ends in a **RUSH**: a beat-spaced wall chorus with its own melody. Clear it to shift up. The speed rises, the colours change and the soundtrack **shifts key**.
+
+**What keeps you coming back**
+- **Close shifts, PERFECT shifts and prism THREADS** build a multiplier up to x8. Play it safe and it drains away.
 - **Golden Prism = OVERDRIVE:** smash straight through walls for a few glorious seconds.
-- **Shifter walls:** arrows mean a wall is about to jump into your world.
-- **Ghost best line:** watch your best distance scroll toward you, then pass it.
-- **18 shift goals** and work-shift ranks, from *Trainee* to *Overlord of Overtime*.
+- **Daily Challenge:** the same walls for everyone today, with a separate best score.
+- **Ghost best line**, **20 shift goals**, work-shift ranks from *Trainee* to *Overlord of Overtime*, and **7 unlockable skins**.
 - Instant restart. One more shift. Just one more.
 
 Everything you see and hear is generated by code: Canvas 2D graphics drawn in difference mode (anything crossing the line inverts) and WebAudio-synthesised sound effects and music. There are no external assets.
 
 *Windows tip: pressing Shift 5 times can open Sticky Keys. Say "No", or use the arrow keys. The jam brief warned us.*
 
-**Theme: SHIFT.** It's the only control (the two Shift keys), it's what you do (shift between worlds), it's how difficulty works (gear shifts), it's the music (key shifts) and it's the ranks (work shifts).
+**Theme: SHIFT.** It's the only control (the two Shift keys), it's what you do (shift between worlds, or ride the line between them), it's how levels work (gear shifts, wall shifts, mirror shifts), it's the music (key shifts) and it's the ranks (work shifts).
 
 **AI disclosure:** this game was made with an AI coding assistant. The code was AI-assisted, then directed, reviewed and play-tested by me. No AI-generated images or audio: all art and sound are procedural code.
 
